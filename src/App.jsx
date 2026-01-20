@@ -1,10 +1,11 @@
 import './App.css'
+import HeroComponent from './components/Hero/HeroComponent'
 
 function App() {
 
   return (
     <>
-     
+     <HeroComponent />
     </>
   )
 }
