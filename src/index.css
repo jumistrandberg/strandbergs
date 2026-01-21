@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* -------------------- DESIGN TOKENS -------------------- */
+@layer base {
+  :root {
+    --background: 330 76% 94%;
+    --foreground: 0 0% 12%;
+
+    --card: 330 60% 97%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 330 76% 94%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 321 44% 43%;
+    --primary-foreground: 330 76% 94%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 330 76% 94%;
+
+    --muted: 330 40% 90%;
+    --muted-foreground: 321 20% 35%;
+
+    --accent: 321 44% 43%;
+    --accent-foreground: 330 76% 94%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 321 30% 80%;
+    --input: 321 30% 80%;
+    --ring: 321 44% 43%;
+
+    --radius: 0.75rem;
+
+    --brand-dark: 0 0% 12%;
+    --brand-light: 330 76% 94%;
+    --brand-accent: 321 44% 43%;
+    --brand-accent-light: 321 44% 60%;
+
+    --gradient-brand: linear-gradient(
+      135deg,
+      hsl(321 44% 43%) 0%,
+      hsl(321 50% 55%) 100%
+    );
+
+    --gradient-dark: linear-gradient(
+      180deg,
+      hsl(0 0% 12%) 0%,
+      hsl(0 0% 18%) 100%
+    );
+
+    --shadow-soft: 0 4px 30px hsla(321, 44%, 43%, 0.15);
+    --shadow-elevated: 0 20px 60px hsla(0, 0%, 0%, 0.1);
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 330 76% 94%;
+    --card: 0 0% 15%;
+    --card-foreground: 330 76% 94%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 330 76% 94%;
+    --primary: 321 44% 50%;
+    --primary-foreground: 0 0% 12%;
+    --secondary: 330 76% 94%;
+    --secondary-foreground: 0 0% 12%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 330 40% 70%;
+    --accent: 321 44% 50%;
+    --accent-foreground: 0 0% 12%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 321 44% 50%;
+  }
+}
+
+/* -------------------- BASE RESET -------------------- */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* -------------------- COMPONENT CLASSES -------------------- */
+@layer components {
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 6rem;
+      padding-right: 6rem;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  .container-narrow {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-gradient {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* -------------------- BLOB ANIMATIONS -------------------- */
+@keyframes blob-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: blur(60px) brightness(1);
+  }
+  50% {
+    filter: blur(80px) brightness(1.2);
+  }
+}
+
+.blob-animation {
+  animation: blob-morph 8s ease-in-out infinite,
+             float 6s ease-in-out infinite;
+}
+
+.blob-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* -------------------- SCROLL ANIMATIONS -------------------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
