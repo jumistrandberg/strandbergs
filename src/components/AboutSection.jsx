@@ -2,7 +2,9 @@ import React from 'react'
 
 const AboutSection = () => {
   return (
-    <div style={{backgroundColor: 'red'}}></div>
+    <div style={{backgroundColor: 'red'
+
+    }}></div>
   )
 }
 

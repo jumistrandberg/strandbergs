@@ -1,13 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 /* -------------------- DESIGN TOKENS -------------------- */
 @layer base {
   :root {
-    --background: 330 76% 94%;
+    /* --background: 0 100% 99%; */
+    --background: 0 0% 12%;
+
     --foreground: 0 0% 12%;
 
     --card: 330 60% 97%;
@@ -19,8 +20,11 @@
     --primary: 321 44% 43%;
     --primary-foreground: 330 76% 94%;
 
-    --secondary: 0 0% 12%;
+    --secondary: 331 76% 94%;
     --secondary-foreground: 330 76% 94%;
+
+    /* --dark: 0 0% 12%; */
+    --dark-foreground: 330 76% 94%;
 
     --muted: 330 40% 90%;
     --muted-foreground: 321 20% 35%;
@@ -57,8 +61,8 @@
     --shadow-soft: 0 4px 30px hsla(321, 44%, 43%, 0.15);
     --shadow-elevated: 0 20px 60px hsla(0, 0%, 0%, 0.1);
 
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
   }
 
   .dark {
@@ -96,6 +100,8 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-family: var(--font-body);
+
+    overflow-x: hidden;
   }
 
   h1,
@@ -110,12 +116,12 @@
 
 /* -------------------- COMPONENT CLASSES -------------------- */
 @layer components {
-  .section-padding {
+  /* .section-padding {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
+  } */
 
   @media (min-width: 768px) {
     .section-padding {
@@ -147,49 +153,6 @@
   }
 }
 
-/* -------------------- BLOB ANIMATIONS -------------------- */
-@keyframes blob-morph {
-  0%, 100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-  25% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-  50% {
-    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
-  }
-  75% {
-    border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    filter: blur(60px) brightness(1);
-  }
-  50% {
-    filter: blur(80px) brightness(1.2);
-  }
-}
-
-.blob-animation {
-  animation: blob-morph 8s ease-in-out infinite,
-             float 6s ease-in-out infinite;
-}
-
-.blob-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
-}
-
 /* -------------------- SCROLL ANIMATIONS -------------------- */
 @keyframes fade-up {
   from {
@@ -206,6 +169,12 @@
   animation: fade-up 0.8s ease-out forwards;
 }
 
-.animation-delay-200 { animation-delay: 0.2s; }
-.animation-delay-400 { animation-delay: 0.4s; }
-.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}

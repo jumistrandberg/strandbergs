@@ -63,7 +63,7 @@ const HeroComponent = () => {
   const opacity = 0.85 - eased * 0.25;
 
   const rotation = eased * 15;
-  const spin = eased * 35; // <-- NEW: spin while separating
+  const spin = eased * 35;
 
   const blur = eased * 30;
 
@@ -71,7 +71,7 @@ const HeroComponent = () => {
   const mouseY = mouseSmooth.current.y * 25;
 
   return (
-    <section className="hero" style={{ border: "1px solid red" }}>
+    <section className="hero">
       {/* ---------------- SYMBOLS ---------------- */}
       <div className="hero-symbol-container">
         {/* Yin */}
@@ -80,8 +80,8 @@ const HeroComponent = () => {
           style={{
             transform: `
               translate(
-                calc(-50% - ${separation}vw + ${mouseX}px),
-                calc(-50% + ${mouseY}px)
+                calc(-70% - ${separation}vw + ${mouseX}px),
+                calc(-40% + ${mouseY}px)
               )
               scale(${scale})
               rotate(${-rotation + spin}deg)
@@ -91,16 +91,18 @@ const HeroComponent = () => {
           }}
         >
           <svg viewBox="0 0 200 200">
-            <path
-              d="
+            <g transform="translate(100 100) rotate(185) scale(-1 1) translate(-100 -100)">
+              <path
+                d="
                 M100 0
                 A100 100 0 0 0 100 200
-                A50 50 0 0 1 100 100
-                A50 50 0 0 0 100 0
+                A50 50 0 0 1 100 90
+                A40 40 0 0 0 100 0
                 Z
               "
-              fill="hsl(var(--secondary))"
-            />
+                fill="hsl(var(--secondary))"
+              />
+            </g>
           </svg>
         </div>
 
@@ -110,8 +112,8 @@ const HeroComponent = () => {
           style={{
             transform: `
               translate(
-                calc(-50% + ${separation}vw + ${mouseX * 0.8}px),
-                calc(-50% + ${mouseY * 0.8}px)
+                calc(-40% + ${separation}vw + ${mouseX * 0.8}px),
+                calc(-70% + ${mouseY * 0.8}px)
               )
               scale(${scale})
               rotate(${rotation + spin}deg)
@@ -121,7 +123,7 @@ const HeroComponent = () => {
           }}
         >
           <svg viewBox="0 0 200 200">
-            <g transform="translate(100 100) rotate(180) scale(-1 1) translate(-100 -100)">
+            <g transform="translate(100 100) rotate(185) scale(-1 -1) translate(-100 -100)">
               <path
                 d="
                   M100 0
