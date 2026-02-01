@@ -72,6 +72,22 @@ const HeroComponent = () => {
 
   return (
     <section className="hero">
+      <div className="noise-background"></div>
+
+      {/* ---------------- CONTENT ---------------- */}
+      <div
+        className="hero-content"
+        style={{
+          opacity: 1 - scrollProgress * 2.5,
+          transform: `translateY(${scrollProgress * 60}px)`,
+        }}
+      >
+        <h1>Strandbergs</h1>
+        <p className="subtitle">vi kan</p>
+        <p>personlig assistans</p>
+        <button onClick={handleScrollToAbout}>Om oss</button>
+      </div>
+
       {/* ---------------- SYMBOLS ---------------- */}
       <div className="hero-symbol-container">
         {/* Yin */}
@@ -80,8 +96,8 @@ const HeroComponent = () => {
           style={{
             transform: `
               translate(
-                calc(-70% - ${separation}vw + ${mouseX}px),
-                calc(-40% + ${mouseY}px)
+                calc(-55% - ${separation}vw + ${mouseX}px),
+                calc(-55% + ${separation * 2}vh + ${mouseY}px)
               )
               scale(${scale})
               rotate(${-rotation + spin}deg)
@@ -111,15 +127,14 @@ const HeroComponent = () => {
           className="hero-blob hero-blob-yang"
           style={{
             transform: `
-              translate(
-                calc(-40% + ${separation}vw + ${mouseX * 0.8}px),
-                calc(-70% + ${mouseY * 0.8}px)
-              )
+          translate(
+             calc(-55% + ${separation}vw + ${mouseX * 0.8}px),
+             calc(-55% + ${separation * 2}vh + ${mouseY * 0.8}px)
+      )
               scale(${scale})
               rotate(${rotation + spin}deg)
             `,
-            opacity,
-            filter: `blur(${blur}px)`,
+            opacity: 1,
           }}
         >
           <svg viewBox="0 0 200 200">
@@ -137,20 +152,6 @@ const HeroComponent = () => {
             </g>
           </svg>
         </div>
-      </div>
-
-      {/* ---------------- CONTENT ---------------- */}
-      <div
-        className="hero-content"
-        style={{
-          opacity: 1 - scrollProgress * 2.5,
-          transform: `translateY(${scrollProgress * 60}px)`,
-        }}
-      >
-        <h1>Strandbergs</h1>
-        <p>vi kan</p>
-        <p>personlig assistans</p>
-        <button onClick={handleScrollToAbout}>Om oss</button>
       </div>
     </section>
   );

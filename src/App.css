@@ -1,6 +1,6 @@
 #root {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -26,16 +26,38 @@
   }
 }
 
-@keyframes soft-glow {
-  0%, 100% {
-    filter: blur(10px) 
-            drop-shadow(0 0 40px hsl(var(--primary) / 0.6))
-            drop-shadow(0 0 80px hsl(var(--primary) / 0.4));
+/* Yin glow - secondary color */
+@keyframes soft-glow-yin {
+  0%,
+  100% {
+    filter: blur(8px) 
+      drop-shadow(0 0 40px hsla(327 27% 53% / 0.4))
+      drop-shadow(0 0 80px hsla(327 27% 53% / 0.3))
+      drop-shadow(0 0 120px hsla(327 27% 53% / 0.2));
   }
   50% {
-    filter: blur(3px) 
-            drop-shadow(0 0 60px hsl(var(--primary) / 0.8))
-            drop-shadow(0 0 100px hsl(var(--secondary) / 0.6));
+    filter: blur(10px) 
+      drop-shadow(0 0 50px hsla(327 27% 53% / 0.5))
+      drop-shadow(0 0 100px hsla(327 27% 53% / 0.4))
+      drop-shadow(0 0 150px hsla(327 27% 53% / 0.3));
+  }
+}
+
+
+/* Yang glow - primary color */
+@keyframes soft-glow-yang {
+  0%,
+  100% {
+    filter: blur(8px) 
+      drop-shadow(0 0 40px hsla(331 100% 75% / 0.4))
+      drop-shadow(0 0 80px hsla(331 100% 75% / 0.3))
+      drop-shadow(0 0 120px hsla(331 100% 75% / 0.2));
+  }
+  50% {
+    filter: blur(10px) 
+      drop-shadow(0 0 50px hsla(331 100% 75% / 0.5))
+      drop-shadow(0 0 100px hsla(331 100% 75% / 0.4))
+      drop-shadow(0 0 150px hsla(331 100% 75% / 0.3));
   }
 }
 
@@ -57,39 +79,46 @@
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 100svh; /* mobile-safe viewport */
+  min-height: 100svh;
   width: 100vw;
   overflow: hidden;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
   border: 1px solid green;
 }
 
 .hero-symbol-container {
-  position: absolute; /* ⬅️ NOT fixed */
+  position: relative;
   inset: 0;
   pointer-events: none;
   z-index: 1;
+  margin-top: 3rem
 }
 
 .hero-blob {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  will-change: transform, filter;
-  animation: soft-glow 4s ease-in-out infinite;
+  /* top: 50%;
+  left: 50%; */
+  will-change: transform;
+}
 
-  border: 1px solid red;
+.hero-blob-yin {
+  animation: soft-glow-yin 4s ease-in-out infinite;
+}
+
+.hero-blob-yang {
+  animation: soft-glow-yang 4s ease-in-out infinite;
 }
 
 .hero-blob svg {
   width: 280px;
   height: 280px;
-}
+      animation: logo-spin 30s infinite;
 
+}
 
 @media (min-width: 768px) {
   .hero-blob svg {
@@ -107,10 +136,38 @@
 
 .hero-content {
   position: relative;
+
   z-index: 10;
   text-align: center;
   max-width: 40rem;
   padding-inline: 1.5rem;
-  color: blue;
   border: 1px solid blue;
 }
+
+@layer components {
+  h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: hsl(var(--brand-dark));
+  }
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: hsl(var(--muted-foreground));
+  }
+}
+
+.noise-background {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-image: url("https://stackdiary.com/wp-content/uploads/2022/10/noise_img.png");
+    background-position: 0px 0px;
+    background-size: auto;
+    opacity: 0.1;
+  }
