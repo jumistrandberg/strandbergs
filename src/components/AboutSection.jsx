@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const AboutSection = () => {
   return (
-    <div style={{backgroundColor: 'red'
+    <>
+      <p>Om oss</p>
+    </>
+  );
+};
 
-    }}></div>
-  )
-}
-
-export default AboutSection
+export default AboutSection;

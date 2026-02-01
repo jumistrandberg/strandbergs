@@ -30,32 +30,27 @@
 @keyframes soft-glow-yin {
   0%,
   100% {
-    filter: blur(8px) 
-      drop-shadow(0 0 40px hsla(327 27% 53% / 0.4))
+    filter: blur(8px) drop-shadow(0 0 40px hsla(327 27% 53% / 0.4))
       drop-shadow(0 0 80px hsla(327 27% 53% / 0.3))
       drop-shadow(0 0 120px hsla(327 27% 53% / 0.2));
   }
   50% {
-    filter: blur(10px) 
-      drop-shadow(0 0 50px hsla(327 27% 53% / 0.5))
+    filter: blur(10px) drop-shadow(0 0 50px hsla(327 27% 53% / 0.5))
       drop-shadow(0 0 100px hsla(327 27% 53% / 0.4))
       drop-shadow(0 0 150px hsla(327 27% 53% / 0.3));
   }
 }
 
-
 /* Yang glow - primary color */
 @keyframes soft-glow-yang {
   0%,
   100% {
-    filter: blur(8px) 
-      drop-shadow(0 0 40px hsla(331 100% 75% / 0.4))
+    filter: blur(8px) drop-shadow(0 0 40px hsla(331 100% 75% / 0.4))
       drop-shadow(0 0 80px hsla(331 100% 75% / 0.3))
       drop-shadow(0 0 120px hsla(331 100% 75% / 0.2));
   }
   50% {
-    filter: blur(10px) 
-      drop-shadow(0 0 50px hsla(331 100% 75% / 0.5))
+    filter: blur(10px) drop-shadow(0 0 50px hsla(331 100% 75% / 0.5))
       drop-shadow(0 0 100px hsla(331 100% 75% / 0.4))
       drop-shadow(0 0 150px hsla(331 100% 75% / 0.3));
   }
@@ -91,17 +86,15 @@
 }
 
 .hero-symbol-container {
-  position: relative;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  margin-top: 3rem
 }
 
 .hero-blob {
   position: absolute;
-  /* top: 50%;
-  left: 50%; */
+  margin-top: 7rem;
   will-change: transform;
 }
 
@@ -116,8 +109,7 @@
 .hero-blob svg {
   width: 280px;
   height: 280px;
-      animation: logo-spin 30s infinite;
-
+  animation: logo-spin 30s infinite;
 }
 
 @media (min-width: 768px) {
@@ -135,8 +127,8 @@
 }
 
 .hero-content {
-  position: relative;
-
+  position: absolute;
+  margin-top: -50vh;
   z-index: 10;
   text-align: center;
   max-width: 40rem;
@@ -144,30 +136,32 @@
   border: 1px solid blue;
 }
 
-@layer components {
-  h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    color: hsl(var(--brand-dark));
-  }
-  .subtitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: hsl(var(--muted-foreground));
-  }
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: hsl(var(--brand-dark));
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 200 ;
+  margin-bottom: 1rem;
+  color: hsl(var(--muted-foreground));
 }
 
 .noise-background {
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    background-image: url("https://stackdiary.com/wp-content/uploads/2022/10/noise_img.png");
-    background-position: 0px 0px;
-    background-size: auto;
-    opacity: 0.1;
-  }
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  background-image: url("https://stackdiary.com/wp-content/uploads/2022/10/noise_img.png");
+  background-position: 0px 0px;
+  background-size: auto;
+  opacity: 0.1;
+}
