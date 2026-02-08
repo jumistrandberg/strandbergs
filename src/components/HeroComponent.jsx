@@ -1,4 +1,5 @@
 // import BlobComponent from "./BlobComponent";
+import "./Hero-styles.css"
 
 const HeroComponent = () => {
   const handleScrollToAbout = () => {
@@ -9,15 +10,22 @@ const HeroComponent = () => {
     <section className="hero">
       <div className="noise-background"></div>
 
-      {/* ---------------- BLOBS (can wrap multiple sections) ---------------- */}
+      {/* ---------------- BLOBS ---------------- */}
       {/* <BlobComponent /> */}
 
       {/* ---------------- CONTENT ---------------- */}
       <div className="hero-content">
         <h1>Strandbergs</h1>
         <p className="subtitle">vi kan</p>
-        <p className="hero-text">personlig assistans</p>
-        <button onClick={handleScrollToAbout}>Om oss</button>
+        <p className="hero-heading">personlig assistans</p>
+        <button className="hero-button" onClick={handleScrollToAbout}>
+          Om oss
+        </button>
+      </div>
+
+      {/* ---------------- SCROLL INDICATOR ---------------- */}
+      <div className="scroll-indicator">
+        <div className="scroll-line"></div>
       </div>
     </section>
   );

@@ -1,0 +1,204 @@
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-content {
+  position: absolute;
+  margin-top: -50vh;
+  z-index: 10;
+  text-align: center;
+  max-width: 40rem;
+  padding-inline: 1.5rem;
+}
+
+.hero-heading {
+  font-family: "Lora", serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.18rem;
+  margin-bottom: 2rem;
+  color: hsl(var(--foreground));
+}
+
+.hero-button {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0.75rem 2.5rem;
+  border: 1px solid hsl(257 4.6% 55.4%);
+  border-radius: 0.2rem;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.2rem;
+  padding: 1px;
+  background: linear-gradient(90deg, 
+    hsl(257 4.6% 55.4% / 0.3), 
+    hsl(0 0% 80% / 0.9),
+    hsl(0 0% 95% / 1),
+    hsl(0 0% 80% / 0.9),
+    hsl(257 4.6% 55.4% / 0.3)
+  );
+  background-size: 300% 100%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-light-move 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes border-light-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 300% 0%;
+  }
+}
+
+.hero-button:hover {
+  background-color: hsl(270 0% 91% / 0.3);
+}
+
+.hero-button:hover::before {
+  background: linear-gradient(90deg, 
+    hsl(0 0% 40% / 0.4),
+    hsl(0 0% 90% / 1),
+    hsl(0 0% 40% / 0.4)
+  );
+  background-size: 200% 100%;
+  animation: border-light-move-hover 2s linear infinite;
+}
+
+@keyframes border-light-move-hover {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Yin glow - secondary color */
+@keyframes soft-glow-yin {
+  0%,
+  100% {
+    filter: blur(8px) drop-shadow(0 0 40px hsla(327 27% 53% / 0.4))
+      drop-shadow(0 0 80px hsla(327 27% 53% / 0.3))
+      drop-shadow(0 0 120px hsla(327 27% 53% / 0.2));
+  }
+  50% {
+    filter: blur(10px) drop-shadow(0 0 50px hsla(327 27% 53% / 0.5))
+      drop-shadow(0 0 100px hsla(327 27% 53% / 0.4))
+      drop-shadow(0 0 150px hsla(327 27% 53% / 0.3));
+  }
+}
+
+/* Yang glow - primary color */
+@keyframes soft-glow-yang {
+  0%,
+  100% {
+    filter: blur(8px) drop-shadow(0 0 40px hsla(331 100% 75% / 0.4))
+      drop-shadow(0 0 80px hsla(331 100% 75% / 0.3))
+      drop-shadow(0 0 120px hsla(331 100% 75% / 0.2));
+  }
+  50% {
+    filter: blur(10px) drop-shadow(0 0 50px hsla(331 100% 75% / 0.5))
+      drop-shadow(0 0 100px hsla(331 100% 75% / 0.4))
+      drop-shadow(0 0 150px hsla(331 100% 75% / 0.3));
+  }
+}
+
+
+
+/* -------------------- HERO LAYOUT -------------------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 100svh;
+  width: 100vw;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid green;
+}
+
+.hero-symbol-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-blob {
+  position: absolute;
+  margin-top: 7rem;
+  will-change: transform;
+}
+
+.hero-blob-yin {
+  animation: soft-glow-yin 4s ease-in-out infinite;
+}
+
+.hero-blob-yang {
+  animation: soft-glow-yang 4s ease-in-out infinite;
+}
+
+.hero-blob svg {
+  /* width: 280px;
+  height: 280px; */
+  animation: logo-spin 30s infinite;
+}
+
+/* -------------------- SCROLL INDICATOR -------------------- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  position: relative;
+  background: linear-gradient(180deg,
+    hsl(257 4.6% 55.4% / 0.2),
+    hsl(0 0% 80% / 0.8),
+    hsl(0 0% 95% / 1),
+    hsl(0 0% 80% / 0.8),
+    hsl(257 4.6% 55.4% / 0.2)
+  );
+  background-size: 100% 300%;
+  animation: scroll-light-move 3s ease-in-out infinite;
+}
+
+@keyframes scroll-light-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 300%;
+  }
+}
+
