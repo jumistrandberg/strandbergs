@@ -1,9 +1,11 @@
-import React from "react";
-
+import "../styles/about.css"
 const AboutSection = () => {
   return (
     <>
-      <p>Om oss</p>
+      <section id="about-section" className="about-section">
+        <h2>About Us</h2>
+        <p>We are a company that values excellence and innovation.</p>
+      </section>
     </>
   );
 };

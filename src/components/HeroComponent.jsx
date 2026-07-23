@@ -1,10 +1,9 @@
-// import BlobComponent from "./BlobComponent";
-import "./Hero-styles.css"
+import "../styles/hero.css"
 
 const HeroComponent = () => {
   const handleScrollToAbout = () => {
-    document.getElementById("om-oss")?.scrollIntoView({ behavior: "smooth" });
-  };
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  }; 
 
   return (
     <section className="hero">
