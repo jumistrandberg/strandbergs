@@ -11,7 +11,7 @@
 @layer base {
   :root {
     /* --background: 0 100% 99%; */
-    --background: 97.3%, 97.3%, 100%;
+    --background: rgb(97.3%,97.3%,100%)
 
     --foreground: 0 0% 12%;
 

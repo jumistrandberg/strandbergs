@@ -9,15 +9,18 @@
 
 .hero-content {
   position: absolute;
-  margin-top: -50vh;
+  margin-top: -40vh;
   z-index: 10;
   text-align: center;
-  max-width: 40rem;
+  max-width: 80vw;
   padding-inline: 1.5rem;
   opacity: 0;
   transform: translateY(30px);
   animation: heroFadeIn 1s ease forwards;
   animation-delay: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-heading {
@@ -28,6 +31,14 @@
   color: hsl(var(--foreground));
 }
 
+.hero-description {
+  font-family: "Lora", serif;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  color: hsl(257 4.6% 55.4%);
+}
+
 .hero-button {
   position: relative;
   font-family: "Inter", sans-serif;
@@ -35,21 +46,24 @@
   font-weight: 300;
   text-transform: uppercase;
   padding: 0.75rem 2.5rem;
-  border: 1px solid hsl(257 4.6% 55.4%);
+  border: 2px solid hsl(321 44% 43%);
   border-radius: 0.2rem;
   cursor: pointer;
   background: transparent;
   transition: background-color 0.3s ease;
   overflow: hidden;
+  width: fit-content;
+  margin-bottom: 1rem;
 }
 
 .hero-button::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 0.2rem;
   padding: 1px;
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     hsl(257 4.6% 55.4% / 0.3),
     hsl(0 0% 80% / 0.9),
     hsl(0 0% 95% / 1),
@@ -88,11 +102,13 @@
 }
 
 .hero-button:hover {
-  background-color: hsl(270 0% 91% / 0.3);
+  background-color: hsl(257 4.6% 55.4% / 0.2);
+  color: #f8f8ff;
 }
 
 .hero-button:hover::before {
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     hsl(0 0% 40% / 0.4),
     hsl(0 0% 90% / 1),
     hsl(0 0% 40% / 0.4)
@@ -191,13 +207,17 @@
   transform: translateX(-50%);
   z-index: 10;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .scroll-line {
   width: 3px;
   height: 50px;
   position: relative;
-  background: linear-gradient(180deg,
+  background: linear-gradient(
+    180deg,
     hsl(321 44% 43% / 0.2),
     hsl(0 0% 80% / 0.8),
     hsl(0 0% 95% / 1),
@@ -205,14 +225,14 @@
     hsl(321 44% 43% / 0.2)
   );
 
-  clip-path: polygon(
-    50% 0%,
-    75% 8%,
-    100% 12%,
-    50% 100%,
-    0% 12%,
-    25% 8%
-  );
+  .scroll-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.75rem;
+    color: hsl(257 4.6% 55.4%);
+    margin-bottom: 0.5rem;
+  }
+
+  clip-path: polygon(50% 0%, 75% 8%, 100% 12%, 50% 100%, 0% 12%, 25% 8%);
   background-size: 100% 300%;
   animation: scroll-light-move 3s ease-in-out infinite;
 }
