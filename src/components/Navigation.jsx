@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navigation.css";
+import "../styles/navigation.css";
 
 const links = [
   { to: "#home", label: "Hem" },
