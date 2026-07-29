@@ -117,6 +117,15 @@ ol {
   color: hsl(257 4.6% 55.4%);
 }
 
+.smaller-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 200;
+  color: hsl(257 4.6% 55.4%);
+  line-height: 110%;
+}
+
 .smaller-text {
   font-size: 1rem;
   font-weight: 200;
