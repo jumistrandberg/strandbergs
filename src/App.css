@@ -2,6 +2,9 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 html {
@@ -44,8 +47,65 @@ h1 {
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1.2;
-  /* margin-bottom: 0.3rem; */
   color: hsl(var(--brand-dark));
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: hsl(var(--brand-dark));
+}
+
+h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 100s;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: hsl(var(--brand-dark));
+}
+
+h5 {
+  font-family: "Lora", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100s;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: hsl(321 44% 43%);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: hsl(257 4.6% 40%);
+}
+
+ul {
+  list-style-type: "\2661";
+  list-style-position: inside;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: hsl(321 44% 43%);
+  font-weight: 200;
+}
+
+ol {
+  list-style-position: inside;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: hsl(321 44% 43%);
+  font-weight: 200;
+  text-align: center;
 }
 
 .subtitle {
@@ -55,6 +115,16 @@ h1 {
   font-weight: 200;
   margin-bottom: 0;
   color: hsl(257 4.6% 55.4%);
+}
+
+.smaller-text {
+  font-size: 1rem;
+  font-weight: 200;
+  color: hsl(257 4.6% 40%);
+}
+
+.accent-color {
+  color: hsl(321 44% 43%);
 }
 
 .btn-secondary {
@@ -88,4 +158,36 @@ h1 {
   background-position: 0px 0px;
   background-size: auto;
   opacity: 0.1;
+}
+
+.bolder {
+  font-weight: 400;
+}
+/* -------------------- SCROLL ANIMATIONS -------------------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hidden until JS adds .is-visible */
+.fade-in-section {
+  opacity: 0;
+}
+
+.fade-in-section.is-visible {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+/* Respect users who don't want motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    opacity: 1;
+    animation: none;
+  }
 }

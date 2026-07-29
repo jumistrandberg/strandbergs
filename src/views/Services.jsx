@@ -1,8 +1,7 @@
-import React from 'react'
-
+import ServicesComponent from "../components/ServicesSection"
 const Services = () => {
   return (
-    <div>Services</div>
+    <ServicesComponent/>
   )
 }
 

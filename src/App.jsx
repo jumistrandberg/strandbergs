@@ -5,13 +5,13 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
-<BrowserRouter>
-  <Navigation />
+    <BrowserRouter>
+      <Navigation />
 
-  <Routes>
-    <Route path="/" element={<Home />} />
-  </Routes>
-</BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

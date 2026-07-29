@@ -7,7 +7,6 @@ const HeroComponent = () => {
 
   return (
     <section className="hero">
-      <div className="noise-background"></div>
 
       {/* ---------------- BLOBS ---------------- */}
       {/* <BlobComponent /> */}
