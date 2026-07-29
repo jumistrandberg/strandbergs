@@ -35,7 +35,6 @@ const HeroComponent = () => {
 
       {/* ---------------- SCROLL INDICATOR ---------------- */}
       <div className="scroll-indicator">
-        <p className="scroll-text">scrolla</p>
         <div className="scroll-line"></div>
       </div>
     </section>
