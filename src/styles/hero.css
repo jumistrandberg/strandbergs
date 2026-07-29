@@ -35,32 +35,14 @@
   font-family: "Lora", serif;
   font-size: 1.25rem;
   line-height: 2rem;
-  margin-bottom: 2rem;
   color: hsl(257 4.6% 55.4%);
-}
-
-.hero-button {
-  position: relative;
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  padding: 0.75rem 2.5rem;
-  border: 2px solid hsl(321 44% 43%);
-  border-radius: 0.2rem;
-  cursor: pointer;
-  background: transparent;
-  transition: background-color 0.3s ease;
-  overflow: hidden;
-  width: fit-content;
-  margin-bottom: 1rem;
 }
 
 .hero-button::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
   padding: 1px;
   background: linear-gradient(
     90deg,
@@ -102,8 +84,8 @@
 }
 
 .hero-button:hover {
-  background-color: hsl(257 4.6% 55.4% / 0.2);
-  color: #f8f8ff;
+  background-color: hsl(321 44% 43%);
+  color: white;
 }
 
 .hero-button:hover::before {
@@ -115,6 +97,14 @@
   );
   background-size: 200% 100%;
   animation: border-light-move-hover 2s linear infinite;
+}
+.hero-btn-section {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 @keyframes border-light-move-hover {
@@ -255,4 +245,96 @@
     top: 70px;
     opacity: 0;
   }
+}
+
+@keyframes button-color-cycle {
+  0%,
+  50%,
+  100% {
+    /* border-color: hsl(321 44% 43%); */
+    color: hsl(321 44% 43%);
+  }
+  25%,
+  75% {
+    /* border-color: white; */
+    color: #f8f8ff
+  }
+}
+
+@keyframes button-sweep {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+.hero-button {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.75rem 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  max-width: fit-content;
+
+  /* text gradient sweep */
+  background-image: linear-gradient(
+    90deg,
+    hsl(321 44% 43%) 0%,
+    hsl(321 44% 43%) 40%,
+    white 50%,
+    hsl(321 44% 43%) 60%,
+    hsl(321 44% 43%) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: button-sweep 3s linear infinite;
+}
+
+.hero-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    hsl(321 44% 43%) 0%,
+    hsl(321 44% 43%) 40%,
+    white 50%,
+    hsl(321 44% 43%) 60%,
+    hsl(321 44% 43%) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: button-sweep 4s linear infinite;
+  pointer-events: none;
+}
+
+.hero-button:hover {
+  background-color: hsl(321 44% 43%);
+}
+
+.hero-button:hover {
+  -webkit-text-fill-color: white;
+  animation-play-state: paused;
+}
+
+.hero-button:hover::after,
+.hero-button:hover::before {
+  animation-play-state: paused;
 }

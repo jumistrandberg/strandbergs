@@ -14,19 +14,23 @@ const HeroComponent = () => {
 
       {/* ---------------- CONTENT ---------------- */}
       <div className="hero-content">
-        <h1>Strandbergs</h1>
-        <p className="subtitle">vi kan</p>
-        <p className="hero-heading">personlig assistans</p>
         <p className="hero-description">
-          Som assistansbolaget med det lilla extra sätter Strandbergs
-          "personlig" i personlig assistans, sedan 2011.
+          Funktionsrätt, inkludering, trygghet och acceptans, det är
         </p>
-        <button className="hero-button" onClick={handleScrollToAbout}>
-          Jag vill veta mer!
-        </button>
-        <button className="btn-secondary" onClick={handleScrollToAbout}>
-          Har jag rätt till personlig assistans?
-        </button>
+        <h1>Strandbergs</h1>
+        <p className="hero-heading">personlig assistans</p>
+        <p className="subtitle">
+          Assistansbolaget med det lilla extra sedan 2011
+        </p>
+
+        <div className="hero-btn-section">
+          <button className="hero-button" onClick={handleScrollToAbout}>
+            Jag vill veta mer!
+          </button>
+          <button className="btn-secondary" onClick={handleScrollToAbout}>
+            Har jag rätt till personlig assistans?
+          </button>
+        </div>
       </div>
 
       {/* ---------------- SCROLL INDICATOR ---------------- */}
