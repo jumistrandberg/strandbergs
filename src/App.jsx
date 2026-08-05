@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/strandbergs">
       <Navigation />
 
       <Routes>
