@@ -29,7 +29,7 @@
 
 .method-block {
   /* max-width: fit-content; */
-  background-color: #fdebf4;
+  background-color: rgb(253, 235, 244, 0.5);
   border-radius: 2rem;
   padding: 2rem;
   box-shadow: 0 15px 40px hsl(321 44% 43% / 0.5);
@@ -42,7 +42,7 @@
 }
 
 ol li {
-  background-color: #fdebf4;
+  background-color: rgb(253, 235, 244, 0.5);
   border-radius: 50%;
   padding: 2rem;
   box-shadow: 0 15px 40px hsl(321 44% 43% / 0.5);
