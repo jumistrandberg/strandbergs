@@ -98,6 +98,7 @@
   background-size: 200% 100%;
   animation: border-light-move-hover 2s linear infinite;
 }
+
 .hero-btn-section {
   margin-top: 1rem;
   width: 100%;
@@ -143,7 +144,8 @@
   position: relative;
   height: 100vh;
   min-height: 100svh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   overflow: hidden;
 
   display: flex;
@@ -159,17 +161,12 @@
   z-index: -1;
 }
 
-/* Outer wrapper: ONLY receives the JS-driven transform (translate/scale/rotate).
-   This keeps it on the compositor and free of paint-triggering properties. */
 .hero-blob {
   position: absolute;
   margin-top: 7rem;
   will-change: transform;
 }
 
-/* Inner wrapper: ONLY receives the CSS filter glow animation.
-   Isolated onto its own layer so it doesn't force a repaint of the
-   parent's transform on every animation frame. */
 .hero-blob-glow {
   will-change: filter;
 }
@@ -250,13 +247,11 @@
   0%,
   50%,
   100% {
-    /* border-color: hsl(321 44% 43%); */
     color: hsl(321 44% 43%);
   }
   25%,
   75% {
-    /* border-color: white; */
-    color: #f8f8ff
+    color: #f8f8ff;
   }
 }
 
@@ -284,7 +279,6 @@
   overflow: hidden;
   max-width: fit-content;
 
-  /* text gradient sweep */
   background-image: linear-gradient(
     90deg,
     hsl(321 44% 43%) 0%,
@@ -336,4 +330,65 @@
 .hero-button:hover::after,
 .hero-button:hover::before {
   animation-play-state: paused;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-content {
+    max-width: 85vw;
+    margin-top: -35vh;
+  }
+
+  .hero-heading {
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero-content {
+    max-width: 92vw;
+    margin-top: -32vh;
+    padding-inline: 1rem;
+  }
+
+  .hero-heading {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .hero-btn-section {
+    gap: 0.75rem;
+  }
+
+  .hero-button {
+    font-size: 1rem;
+    padding: 0.65rem 1.75rem;
+  }
+
+  .scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  .scroll-line {
+    height: 36px;
+  }
+
+  .hero-blob-glow svg {
+    width: 40vh;
+  }
 }

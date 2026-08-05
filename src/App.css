@@ -5,10 +5,23 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* -------------------- MEDIA QUERIES -------------------- */
@@ -172,6 +185,7 @@ ol {
 .bolder {
   font-weight: 400;
 }
+
 /* -------------------- SCROLL ANIMATIONS -------------------- */
 @keyframes fade-up {
   from {
@@ -184,7 +198,6 @@ ol {
   }
 }
 
-/* Hidden until JS adds .is-visible */
 .fade-in-section {
   opacity: 0;
 }
@@ -193,10 +206,65 @@ ol {
   animation: fade-up 0.8s ease-out forwards;
 }
 
-/* Respect users who don't want motion */
 @media (prefers-reduced-motion: reduce) {
   .fade-in-section {
     opacity: 1;
     animation: none;
+  }
+}
+
+/* -------------------- RESPONSIVE TYPOGRAPHY -------------------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h4 {
+    font-size: 1.65rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 1.15rem;
+  }
+
+  p,
+  ul,
+  ol {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.75rem;
   }
 }

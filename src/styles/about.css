@@ -1,6 +1,7 @@
 #about-section {
   line-height: 2rem;
   max-width: 1500px;
+  width: 100%;
 }
 
 .about-section {
@@ -28,7 +29,6 @@
 }
 
 .method-block {
-  /* max-width: fit-content; */
   background-color: rgb(253, 235, 244, 0.5);
   border-radius: 2rem;
   padding: 2rem;
@@ -57,6 +57,7 @@ ol li {
 
 .krets-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   padding: 1rem;
   margin: 2rem;
@@ -73,4 +74,76 @@ ol li {
   margin: 3.5rem 0;
   letter-spacing: 2%;
   width: 100%;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about-section {
+    margin: 2.5rem 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .about-intro {
+    gap: 3rem;
+  }
+
+  .method-container {
+    gap: 1.5rem;
+    margin: 1rem;
+  }
+
+  ol li {
+    width: 15rem;
+    height: 15rem;
+    padding: 1.5rem;
+  }
+
+  .krets-container {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .about-section {
+    padding: 1rem;
+    margin: 2rem 1rem;
+  }
+
+  .about-intro {
+    gap: 2rem;
+  }
+
+  .method-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .method-block {
+    height: auto;
+    min-height: 9rem;
+    padding: 1.5rem;
+  }
+
+  ol li {
+    width: 100%;
+    max-width: 16rem;
+    height: 16rem;
+    padding: 1.25rem;
+  }
+
+  .krets-container {
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+
+  .about-right-to-assistance {
+    padding: 1rem 0;
+    margin: 2rem 0;
+  }
 }
