@@ -1,7 +1,7 @@
 #about-section {
   line-height: 2rem;
   max-width: 1500px;
-  width: 100%;
+  margin-inline: auto;
 }
 
 .about-section {
@@ -10,7 +10,7 @@
   justify-content: flex-start;
   text-align: left;
   padding: 2rem;
-  margin: 3.5rem 2.5rem;
+  margin-block: 3.5rem; 
   letter-spacing: 2%;
 }
 
