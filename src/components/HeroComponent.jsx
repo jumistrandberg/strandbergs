@@ -8,6 +8,7 @@ const HeroComponent = () => {
   return (
     <section className="hero">
 
+
       {/* ---------------- BLOBS ---------------- */}
       {/* <BlobComponent /> */}
 
@@ -18,9 +19,9 @@ const HeroComponent = () => {
         </p>
         <h1>Strandbergs</h1>
         <p className="hero-heading">personlig assistans</p>
-        <p className="subtitle">
+        {/* <p className="subtitle">
           Assistansbolaget med det lilla extra sedan 2011
-        </p>
+        </p> */}
 
         <div className="hero-btn-section">
           <button className="hero-button" onClick={handleScrollToAbout}>

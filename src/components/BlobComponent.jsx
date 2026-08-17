@@ -85,6 +85,7 @@ const HeroBlobs = () => {
 
   return (
     <div className="hero-symbol-container">
+      
       {/* -------------------- YIN -------------------- */}
 
       <div

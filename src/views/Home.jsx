@@ -9,6 +9,8 @@ const Home = () => {
   return (
     <>
       <section id="home">
+        <div className="hero-bg-image"></div>
+        <div className="hero-bg-overlay"></div>
         <BlobComponent />
         <HeroComponent />
       </section>
