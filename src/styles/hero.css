@@ -399,8 +399,8 @@
     height: 95vh;
   }
   .hero {
-    height: 95vh;
-    min-height: 95svh;
+    /* height: 95vh;
+    min-height: 95svh; */
     justify-content: flex-start;
     margin-top: 40vw;
   }

@@ -1,27 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useFadeInOnScroll = (threshold = 0.15) => {
+export function useFadeInOnScroll() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+
+    if (isMobile) {
+      setIsVisible(true);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(node);
+          observer.disconnect();
         }
       },
-      { threshold }
+      { threshold: 0.1 } // adjust to match your existing threshold
     );
 
-    observer.observe(node);
+    if (ref.current) observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, [threshold]); // primitive, stable across re-renders
+  }, []);
 
   return { ref, isVisible };
-};
+}
