@@ -11,7 +11,7 @@
 @layer base {
   :root {
     /* --background: 0 100% 99%; */
-    --background: rgb(97.3%,97.3%,100%)
+    --background: #f8f8ff;
 
     --foreground: 0 0% 12%;
 
@@ -65,7 +65,7 @@
     --shadow-soft: 0 4px 30px hsla(321, 44%, 43%, 0.15);
     --shadow-elevated: 0 20px 60px hsla(0, 0%, 0%, 0.1);
 
-    --font-display: "Cormorant Garamond", serif;
+    --font-display: "Lora", sans-serif;
     --font-body: "Inter", sans-serif;
   }
 

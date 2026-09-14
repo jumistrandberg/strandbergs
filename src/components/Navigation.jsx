@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../styles/navigation.css";
 
 const links = [
@@ -13,9 +12,13 @@ const links = [
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
+  // Show background/navigation styling after scrolling
   useEffect(() => {
     const handleScroll = () => {
       setShowNav(window.scrollY > 10);
@@ -23,11 +26,45 @@ const Navigation = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Detect which section is currently visible
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
-<nav className={`nav ${showNav ? "show" : ""} ${isOpen ? "menu-open" : ""}`}>      <div className="nav-container">
+    <nav
+      className={`nav ${showNav ? "show" : ""} ${
+        isOpen ? "menu-open" : ""
+      }`}
+    >
+      <div className="nav-container">
+        <h1>Strandbergs</h1>
 
         <button
           className={`nav-toggle ${isOpen ? "is-active" : ""}`}
@@ -41,15 +78,24 @@ const Navigation = () => {
         </button>
 
         <ul className={`nav-links ${isOpen ? "is-open" : ""}`}>
-          {links.map(({ to, label }) => (
-            <li key={to}>
-              <a href={to} onClick={closeMenu}>
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          {links.map(({ to, label }) => {
+            const sectionId = to.substring(1);
 
+            return (
+              <li key={to}>
+                <a
+                  href={to}
+                  onClick={closeMenu}
+                  className={
+                    activeSection === sectionId ? "active" : ""
+                  }
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );

@@ -133,7 +133,7 @@ const HeroBlobs = () => {
                   A40 40 0 0 0 100 0
                   Z
                 "
-                fill="hsl(var(--secondary))"
+                fill="#f7f3ee"
               />
             </g>
           </svg>

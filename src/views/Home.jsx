@@ -10,9 +10,11 @@ const Home = () => {
     <>
       <section id="home">
         <div className="hero-bg-image"></div>
-        <div className="hero-bg-overlay"></div>
-        <BlobComponent />
+        {/* <div className="hero-bg-overlay"></div> */}
         <HeroComponent />
+        <div className="blob-desktop-only">
+          <BlobComponent />
+        </div>
       </section>
 
       <section id="about">

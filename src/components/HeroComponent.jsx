@@ -7,18 +7,18 @@ const HeroComponent = () => {
 
   return (
     <section className="hero">
-
-
       {/* ---------------- BLOBS ---------------- */}
       {/* <BlobComponent /> */}
 
       {/* ---------------- CONTENT ---------------- */}
       <div className="hero-content">
         <p className="hero-description">
-          Funktionsrätt, inkludering, trygghet och acceptans, det är
+          Assistansbolaget med det lilla extra sedan 2011
         </p>
-        <h1>Strandbergs</h1>
-        <p className="hero-heading">personlig assistans</p>
+        {/* <h1>Strandbergs</h1> */}
+        <h2 className="hero-heading">
+          Där personlig blir <br />personligt
+        </h2>
         {/* <p className="subtitle">
           Assistansbolaget med det lilla extra sedan 2011
         </p> */}

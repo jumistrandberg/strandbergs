@@ -8,7 +8,7 @@ const AboutSection = () => {
   return (
     <>
       <section
-        id="about-section"
+        id="about"
         className={`about-section fade-in-section ${isVisible ? "is-visible" : ""}`}
         ref={ref}
       >

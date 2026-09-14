@@ -1,9 +1,13 @@
-import AboutComponent from "../components/AboutSection"
+import AboutComponent from "../components/AboutSection";
+import BlobComponent from "../components/BlobComponent";
 
 const About = () => {
   return (
-    <AboutComponent />
-  )
-}
+    <>
+      <AboutComponent />
+      {/* <BlobComponent /> */}
+    </>
+  );
+};
 
-export default About
+export default About;
