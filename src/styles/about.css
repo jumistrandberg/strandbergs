@@ -11,7 +11,7 @@
   justify-content: flex-start;
   text-align: left;
   padding: 2rem;
-  margin-block: 3.5rem; 
+  margin-block: 3.5rem;
   letter-spacing: 2%;
 }
 
@@ -24,9 +24,13 @@
 .method-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  gap: 1rem;
   padding: 1rem;
-  margin: 2rem;
+  margin: 2rem 0;
+}
+
+.method-container-3col {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .method-block {
@@ -37,9 +41,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
   gap: 1rem;
-  height: 11rem;
+  height: auto;
+  min-height: 11rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.method-block h5 {
+  margin: 0;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.method-block p {
+  margin: 0;
+  flex-grow: 1;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.method-block button {
+  margin-top: auto;
+  width: 100%;
 }
 
 ol li {
@@ -92,7 +125,7 @@ ol li {
 
   .method-container {
     gap: 1.5rem;
-    margin: 1rem;
+    margin: 1rem 0;
   }
 
   ol li {
@@ -117,7 +150,8 @@ ol li {
     gap: 2rem;
   }
 
-  .method-container {
+  .method-container,
+  .method-container-3col {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     padding: 0;

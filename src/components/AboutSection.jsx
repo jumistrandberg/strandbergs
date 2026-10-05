@@ -14,22 +14,63 @@ const AboutSection = () => {
       >
         <div className="about-intro">
           <div>
-            <p className="subtitle">Vår vision</p>
-            <h2 className="about-heading">Om oss</h2>
-            <p>
-              Det finns idag ingen anledning att acceptera sämre livskvalitet på
-              grund av en funktionsnedsättning. Strandbergs-Assistans finns för
-              dig som vill ha en flexibel, trygg och personlig lösning på dina
-              villkor. Vi erbjuder personlig assistans till barn, ungdomar och
-              vuxna i hela Sverige. Vi tror på möjligheter, inte begränsningar,
-              och vi vet hur avgörande ett fungerande team och delaktighet i
-              besluten är för din vardag. Du vet vad som är bäst för dig vi ser
-              till att det blir verklighet.
-            </p>
-            <br />
-            <button className="btn-secondary">
-              Boka ett kostnadsfritt samtal
-            </button>
+            <div className="about-into-section">
+              <p className="subtitle">Vår vision</p>
+              <h2 className="about-heading">
+                Du är <span className="accent-color">unik</span>. Därför ska din assistans också vara det.
+              </h2>
+              <p>
+                Vi på Strandbergs finns här för dig som vill leva livet på dina
+                egna villkor. Vi erbjuder personlig assistans till barn,
+                ungdomar och vuxna i hela Sverige. Vi tror på möjligheter, inte
+                begränsningar. Vi vet att ingen människa kan passa in i en mall
+                och därför formar vi personliga lösningar efter ditt liv. Du vet
+                vad som är bäst för dig och vi ser till att det blir verklighet.
+              </p>
+              <button className="btn-secondary about-btn">
+                Boka kostnadsfri rådgivning
+              </button>
+              {/* <p className="subtile">
+              Gratis juridisk rådgivningoch hjälp med ansökan eller byte av
+              anordnare på ditt språk, utan krav.
+            </p> */}
+            </div>
+
+            <h4>Varför Strandbergs?</h4>
+            <div className="method-container method-container-3col">
+              <div className="method-block">
+                <h5>Gratis juridisk rådgivning</h5>
+                <p>
+                  Att ansöka om assistansersättning är krångligt. Våra jurister
+                  hjälper dig kostnadsfritt genom hela processen, från första
+                  ansökan till eventuellt överklagande.
+                </p>
+                <button className="btn-secondary about-btn">
+                  Boka kostnadsfri rådgivning
+                </button>
+              </div>
+              <div className="method-block">
+                <h5>Vi talar ditt språk</h5>
+                <p>
+                  Att kunna uttrycka sig är a och o för att få rätt hjälp. Vårt
+                  team talar bland annat svenska, engelska, arabiska och
+                  serbokroatiska så att du kan uttrycka precis det du menar på
+                  ditt språk.
+                </p>
+                <button>Kontakta oss på ditt språk</button>
+              </div>
+              <div className="method-block">
+                <h5>Strandbergsmetoden</h5>
+                <p>
+                  Vi applicerar inga färdiga lösningar på ditt liv. Vi lyssnar,
+                  förstår och bygger assistansen runt dig, dina rutiner, dina
+                  behov och din vardag. Detta är vad vi kallar
+                  Strandbergsmetoden. Ett sätt att arbeta som utgår ifrån dig
+                  och dina behov.
+                </p>
+                <button>Så jobbar vi</button>
+              </div>
+            </div>
           </div>
 
           <div>

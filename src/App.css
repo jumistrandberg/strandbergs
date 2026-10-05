@@ -67,10 +67,10 @@ h1 {
 h2 {
   font-family: "Lora", sans-serif;
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 1.2;
-  color: hsl(var(--brand-dark));
+  color: #888;;
 }
 
 h4 {
@@ -187,6 +187,14 @@ ol {
   font-weight: 400;
 }
 
+.text-and-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  border: 1px solid red;
+}
 /* -------------------- SCROLL ANIMATIONS -------------------- */
 @keyframes fade-up {
   from {

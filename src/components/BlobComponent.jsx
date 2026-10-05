@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 const HeroBlobs = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [vw, setVw] = useState(() => window.innerWidth);
+  const [inAbout, setInAbout] = useState(false);
 
   const targetScroll = useRef(0);
   const rafRef = useRef(null);
@@ -56,14 +58,43 @@ const HeroBlobs = () => {
     return () => window.removeEventListener("mousemove", onMouseMove);
   }, []);
 
+  useEffect(() => {
+    const onResize = () => setVw(window.innerWidth);
+
+    window.addEventListener("resize", onResize);
+
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    const about = document.getElementById("about");
+
+    if (!about) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInAbout(entry.isIntersecting),
+      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+    );
+
+    observer.observe(about);
+
+    return () => observer.disconnect();
+  }, []);
+
   /* -------------------- TRANSFORM VALUES -------------------- */
 
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
   const eased = easeOutCubic(scrollProgress);
 
+  const isMobile = vw <= 640;
+  const isTablet = vw <= 1024;
+
   // separation between yin and yang — capped so they rest near the sides, not off-screen
-  const separation = eased * 32;
+  const separation = eased * (isMobile ? 30 : isTablet ? 36 : 42);
+
+  const yinOffsetY = eased * (isMobile ? 34 : isTablet ? 32 : 28);
+  const yangOffsetY = eased * (isMobile ? 30 : isTablet ? 24 : -12);
 
   // grows into soft floating blobs
   const scale = 1 - eased * 0.05 + eased * 0.45;
@@ -84,7 +115,7 @@ const HeroBlobs = () => {
   const mouseY = mouseSmooth.current.y * 25;
 
   return (
-    <div className="hero-symbol-container">
+    <div className={`hero-symbol-container${inAbout ? " about-active" : ""}`}>
       
       {/* -------------------- YIN -------------------- */}
 
@@ -101,7 +132,7 @@ const HeroBlobs = () => {
 
               calc(
                 50vh - 50%
-                + ${eased * 8}vh
+                + ${yinOffsetY}vh
                 + ${mouseY + floatYinY}px
               )
             )
@@ -155,7 +186,7 @@ const HeroBlobs = () => {
 
               calc(
                 50vh - 50%
-                + ${eased * 8}vh
+                + ${yangOffsetY}vh
                 + ${mouseY * 0.8 + floatYangY}px
               )
             )
