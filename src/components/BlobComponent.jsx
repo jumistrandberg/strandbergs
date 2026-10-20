@@ -72,7 +72,8 @@ const HeroBlobs = () => {
     if (!about) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setInAbout(entry.isIntersecting),
+      ([entry]) =>
+        setInAbout(entry.isIntersecting || entry.boundingClientRect.top < 0),
       { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
     );
 

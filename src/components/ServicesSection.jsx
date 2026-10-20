@@ -4,7 +4,7 @@ import "../App.css";
 const ServicesSection = () => {
   return (
     <div id="services-section">
-      <div classname="services-intro-container">
+      <div className="services-intro-container">
         <p className="subtitle">Våra tjänster</p>
         <h2>
           Du lever <span className="accent-color">ditt liv</span>. Vi ser till
