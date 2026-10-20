@@ -125,6 +125,11 @@
   gap: 1rem;
 }
 
+.grid-box h5 {
+  text-align: left;
+  width: 100%;
+}
+
 /* -------------------- RESPONSIVE -------------------- */
 
 /* Tablet */
