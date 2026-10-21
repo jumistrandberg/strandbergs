@@ -1,9 +1,6 @@
-import React from 'react'
-
+import CareerSection from "../components/CareerSection";
 const Career = () => {
-  return (
-    <div>Career</div>
-  )
-}
+  return <CareerSection />;
+};
 
-export default Career
+export default Career;

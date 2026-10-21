@@ -1,8 +1,12 @@
-import ServicesComponent from "../components/ServicesSection"
+import ServicesComponent from "../components/ServicesSection";
+import FirstStepsComponent from "../components/FirstStepsComponent";
 const Services = () => {
   return (
-    <ServicesComponent/>
-  )
-}
+    <>
+      <ServicesComponent />
+      <FirstStepsComponent />
+    </>
+  );
+};
 
-export default Services
+export default Services;

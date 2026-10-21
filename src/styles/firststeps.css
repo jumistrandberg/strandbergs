@@ -1,0 +1,82 @@
+.first-steps-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 5vw;
+  margin-top: 5rem;
+  background-color: rgb(50 40 49);
+}
+
+.first-steps-container {
+  text-align: left;
+  max-width: 1850px;
+}
+
+.first-steps-text-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.first-steps-section h2,
+.first-steps-section h3,
+.first-steps-section p,
+.first-steps-section hr,
+button {
+  color: #f8f3ee;
+}
+
+.first-steps-section .first-steps-number,
+.first-steps-section .subtitle {
+  color: #b47f9e;
+}
+
+.first-steps-number-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.first-steps-number-card {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.first-steps-number-container p {
+  font-size: 1rem;
+}
+
+.first-steps-number-heading {
+  border-top: 1px solid;
+  font-weight: 700;
+}
+
+.first-steps-section .first-steps-number {
+  font-size: 3rem;
+}
+
+.first-steps-section button {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lora", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0.75rem 2.5rem;
+  margin-bottom: 0.3rem;
+  border: 1px solid;
+  border-radius: 2rem;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  max-width: fit-content;
+}

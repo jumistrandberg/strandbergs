@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowIcon, HeartIcon, TargetIcon } from "./Icons";
+import { ArrowIcon, HeartIcon } from "./Icons";
 import servicesImg from "../assets/iStock-585800040.webp";
 import "../styles/method.css";
 
@@ -31,7 +31,7 @@ const MethodSection = () => {
 
           <div className="method-card-container">
             <div className="method-card">
-              <p className="method-number">01</p>
+              <HeartIcon size={40} />
               <div>
                 <p className="method-card-heading">Vi lyssnar</p>
                 <p className="method-card-text">
@@ -41,7 +41,7 @@ const MethodSection = () => {
               </div>
             </div>
             <div className="method-card">
-              <p className="method-number">02</p>
+              <HeartIcon size={40} />
               <div>
                 <p className="method-card-heading">Vi bygger ditt team</p>
                 <p className="method-card-text">
@@ -51,7 +51,7 @@ const MethodSection = () => {
               </div>
             </div>
             <div className="method-card">
-              <p className="method-number">03</p>
+              <HeartIcon size={40} />
               <div>
                 <p className="method-card-heading">Vi finns kvar</p>
                 <p className="method-card-text">

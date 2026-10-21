@@ -68,6 +68,11 @@
   border-top: 1px solid hsl(321 44% 43%);
 }
 
+.method-card > svg {
+  flex-shrink: 0;
+  color: hsl(321 44% 43%);
+}
+
 .method-card-text {
   font-weight: 300;
   font-size: 1rem;
