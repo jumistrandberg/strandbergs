@@ -1,0 +1,172 @@
+.contact-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+
+  padding: 3rem max(5vw, calc((100vw - 1500px) / 2));
+  margin-top: 5rem;
+  background-color: rgb(50 40 49);
+  text-align: left;
+}
+
+.contact-section h2,
+.contact-section h3,
+.contact-section p {
+  color: #f8f3ee;
+}
+
+.contact-section p {
+  font-size: 1rem;
+}
+
+.contact-section .subtitle,
+.contact-section .smaller-subtitle,
+.contact-section .accent-color {
+  color: #f3c9e0;
+}
+
+.contact-section hr {
+  width: 100%;
+  margin: 0.75rem 0;
+  border: none;
+  border-top: 1px solid rgb(243 201 224 / 0.4);
+  background: none;
+}
+
+/* -------------------- LEFT COLUMN -------------------- */
+
+.contact-text-container {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgb(243 201 224 / 0.4);
+}
+
+.contact-container p {
+  margin: 0;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* labels (adress, telefon, e-post) */
+.contact-container > p:first-child {
+  color: #f3c9e0;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+/* the heart row: icon beside text */
+.contact-container:has(> svg) {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.contact-container > svg {
+  display: block;
+  flex-shrink: 0;
+  color: #f3c9e0;
+}
+
+/* -------------------- RIGHT COLUMN -------------------- */
+
+.contact-team-container {
+  flex: 1.4;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-team-container > .subtitle {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.team-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.5rem;
+  border: 1px solid rgb(243 201 224 / 0.3);
+  border-radius: 1rem;
+  background-color: rgb(255 255 255 / 0.04);
+}
+
+.team-card h5 {
+  margin: 0;
+  font-weight: 600;
+  color: #f8f3ee;
+}
+
+.team-card p {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* -------------------- TABLET -------------------- */
+
+@media (max-width: 1024px) {
+  .contact-section {
+    gap: 2.5rem;
+  }
+
+  .team-card {
+    padding: 1.25rem;
+  }
+}
+
+/* -------------------- STACKED -------------------- */
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .contact-text-container,
+  .contact-team-container {
+    width: 100%;
+    flex: none;
+  }
+}
+
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 640px) {
+  .contact-section {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .contact-team-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 5rem minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-section {
+    padding-inline: 0.75rem;
+  }
+}
