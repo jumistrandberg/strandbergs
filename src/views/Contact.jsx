@@ -1,9 +1,11 @@
-import React from 'react'
+import FAQ from "../components/FAQ";
 
 const Contact = () => {
   return (
-    <div>Contact</div>
-  )
-}
+    <>
+      <FAQ />
+    </>
+  );
+};
 
-export default Contact
+export default Contact;
