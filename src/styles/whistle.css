@@ -1,0 +1,107 @@
+.whistle-container {
+  width: 100%;
+  max-width: 1500px;
+  box-sizing: border-box;
+  margin: 5rem auto 0;
+  padding-inline: 5vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.whistle-sub-container {
+  box-sizing: border-box;
+  padding: 2.5rem;
+  background-color: rgb(229 223 236 / 0.8);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.whistle-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.whistle-card > svg {
+  display: block;
+  flex-shrink: 0;
+  color: hsl(321 44% 43%);
+}
+
+.whistle-card p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.whistle-heading {
+  font-weight: 600;
+}
+
+.whistle-sub-container .whistle-btn {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+
+  font-family: "Lora", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  padding: 0.75rem 2.5rem;
+  border: 1px solid;
+  border-radius: 2rem;
+
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  border: 1px solid hsl(321 44% 43%);
+  color: hsl(321 44% 43%);
+}
+
+/* -------------------- TABLET -------------------- */
+
+@media (max-width: 1024px) {
+  .whistle-sub-container {
+    padding: 2rem;
+  }
+
+  .whistle-card {
+    gap: 2rem;
+  }
+}
+
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 640px) {
+  .whistle-container {
+    margin-top: 3rem;
+    padding-inline: 1rem;
+  }
+
+  .whistle-sub-container {
+    padding: 1.5rem;
+  }
+
+  .whistle-card {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .whistle-container {
+    padding-inline: 0.75rem;
+  }
+}
