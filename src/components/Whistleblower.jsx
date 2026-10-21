@@ -6,7 +6,10 @@ const Whistleblower = () => {
     <>
       <div className="whistle-container">
         <p className="subtitle">visselblåsarfunktion</p>
-        <h2>Välkommen till vår rapporteringskanal.</h2>
+        <h2>
+          Välkommen till vår{" "}
+          <span className="accent-color"> rapporteringskanal</span>.
+        </h2>
         <p>
           Vår interna rapporteringskanal, så kallad visselblåsarfunktion, kan du
           använda för att rapportera misstankar om oegentligheter i vår
