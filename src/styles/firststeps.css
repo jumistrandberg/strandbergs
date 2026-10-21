@@ -12,13 +12,17 @@
 }
 
 .first-steps-container {
+  width: 100%;
+  max-width: 1500px;
+  box-sizing: border-box;
   text-align: left;
-  max-width: 1850px;
 }
 
 .first-steps-text-container {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: 3rem;
   margin-bottom: 2rem;
 }
@@ -26,8 +30,7 @@
 .first-steps-section h2,
 .first-steps-section h3,
 .first-steps-section p,
-.first-steps-section hr,
-button {
+.first-steps-section button {
   color: #f8f3ee;
 }
 
@@ -36,16 +39,29 @@ button {
   color: #b47f9e;
 }
 
+.first-steps-section hr {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-top: 1px solid rgb(248 243 238 / 0.4);
+  background: none;
+}
+
 .first-steps-number-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 3rem;
 }
 
 .first-steps-number-card {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.first-steps-number-card p {
+  margin: 0;
 }
 
 .first-steps-number-container p {
@@ -59,12 +75,14 @@ button {
 
 .first-steps-section .first-steps-number {
   font-size: 3rem;
+  line-height: 1;
 }
 
 .first-steps-section button {
-  align-self: flex-end;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   font-family: "Lora", sans-serif;
   font-size: 1rem;
@@ -79,4 +97,62 @@ button {
   transition: background-color 0.3s ease;
   overflow: hidden;
   max-width: fit-content;
+}
+
+/* -------------------- TABLET -------------------- */
+
+@media (max-width: 1024px) {
+  .first-steps-section {
+    padding: 2.5rem 5vw;
+    margin-top: 4rem;
+  }
+
+  .first-steps-text-container {
+    gap: 2rem;
+  }
+
+  .first-steps-number-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .first-steps-section .first-steps-number {
+    font-size: 2.5rem;
+  }
+}
+
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 640px) {
+  .first-steps-section {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .first-steps-text-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .first-steps-section button {
+    width: 100%;
+    max-width: none;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .first-steps-number-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .first-steps-section .first-steps-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .first-steps-section {
+    padding-inline: 0.75rem;
+  }
 }
