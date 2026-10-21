@@ -4,11 +4,11 @@ import "../styles/contact.css"
 const ContactSection = () => {
   return (
     <>
-      <section className="contact-section">
+      <section className="contact-section" id="contact-end">
         <div className="contact-text-container">
           <p className="subtitle">kontakta oss</p>
           <h2>
-            Det börjar med ettt <span className="accent-color">hej</span>.
+            Det börjar med ett <span className="accent-color">hej</span>.
           </h2>
           <div className="contact-container">
             <p>adress</p>

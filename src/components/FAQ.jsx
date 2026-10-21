@@ -2,6 +2,10 @@ import { useState } from "react";
 import { ArrowIcon } from "./Icons";
 import "../styles/faq.css";
 
+const scrollToContact = () => {
+  document.getElementById("contact-end")?.scrollIntoView({ behavior: "smooth" });
+};
+
 const faqs = [
   {
     question: "Vem kan få personlig assistans?",
@@ -50,7 +54,11 @@ const FAQ = () => {
           Stora frågor. <span className="accent-color">Tydliga svar.</span>
         </h2>
         <p>Hittar du inte ditt svar? Vi hjälper dig gärna vidare.</p>
-        <button className="btn-secondary about-btn">
+        <button
+          type="button"
+          className="btn-secondary about-btn"
+          onClick={scrollToContact}
+        >
           Ställ din fråga
           <ArrowIcon />
         </button>

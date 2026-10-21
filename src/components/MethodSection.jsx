@@ -3,6 +3,10 @@ import { ArrowIcon, HeartIcon } from "./Icons";
 import servicesImg from "../assets/iStock-585800040.webp";
 import "../styles/method.css";
 
+const scrollToContact = () => {
+  document.getElementById("contact-end")?.scrollIntoView({ behavior: "smooth" });
+};
+
 const MethodSection = () => {
   return (
     <section className="method-section">
@@ -26,7 +30,7 @@ const MethodSection = () => {
             Bra personlig assistans är just personlig. Vårt arbetssätt, som vi
             kallar Strandbergsmetoden, utgår från din rätt att forma ditt liv.
             Vi vet att alla människor är unika och inte passar in i färdiga
-            mallar. Därför skapar vi unika lösingar för dig och ditt unika liv.
+            mallar. Därför skapar vi unika lösningar för dig och ditt unika liv.
           </p>
 
           <div className="method-card-container">
@@ -61,7 +65,11 @@ const MethodSection = () => {
               </div>
             </div>
           </div>
-          <button className="btn-secondary about-btn">
+          <button
+            type="button"
+            className="btn-secondary about-btn"
+            onClick={scrollToContact}
+          >
             Boka kostnadsfri rådgivning
             <ArrowIcon />
           </button>
